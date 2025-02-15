@@ -8,11 +8,13 @@ app.get('/', function (req, res) {
 
 
 app.get('/bye/:name', function(req, res) {
-    res.send('Bye ' + req.params.name + '!')
+    const sanitizedName = req.params.name.replace(/[^a-zA-Z0-9 ]/g, '');
+    res.send('Bye ' + sanitizedName + '!')
 });
 
 app.get('/:name', function(req, res) {
-    res.send('Hello ' + req.params.name + '!')
+    const sanitizedName = req.params.name.replace(/[^a-zA-Z0-9 ]/g, '');
+    res.send('Hello ' + sanitizedName + '!')
 });
 
 app.listen(3000, function () {
