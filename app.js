@@ -1,5 +1,6 @@
-var express = require('express')
-var app = express()
+import express from "express";
+
+const app = express()
 
 app.get('/', function (req, res) {
   res.send('Hello World!')
@@ -12,3 +13,6 @@ app.get('/:name', function(req, res) {
 app.listen(3000, function () {
   console.log('Listening on port 3000...')
 })
+
+
+export default app;
